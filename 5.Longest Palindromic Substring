@@ -1,0 +1,17 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        maxi=""
+        def arcen(l,r):
+            while(l>=0 and r<=len(s)-1 and s[l]==s[r]):
+                l=l-1
+                r=r+1
+            return s[l+1:r]
+
+        if len(s)==1 or len(s)==0:
+            return s
+        for i in range(len(s)-1):
+            s1=arcen(i,i)
+            s2=arcen(i,i+1)
+            maxi=max([maxi,s1,s2],key=len)
+        return maxi
+       
