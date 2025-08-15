@@ -1,0 +1,16 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        
+        t=n//2
+        s=0
+        while t!=0:
+            i=n-t*2
+            if i==0:
+                s+=1
+            else:
+                s+=(math.factorial(i+t))/((math.factorial(t))*math.factorial(i))
+            t-=1
+        s+=1
+        return int(s)
+
+        
