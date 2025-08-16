@@ -1,0 +1,8 @@
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        maxp = nums[0]
+        currentp= nums[0]
+        for i in range(1, len(nums)):
+            currentp = max(nums[i], currentp*nums[i])
+            maxp = max(maxp, currentp)
+        return maxp
